@@ -13,7 +13,7 @@ exports.findAll = function(req, res) {
 
   exports.create = function(req, res) {
     //const new_contact = new Contact(req.body);
-    console.log(req.body)
+    //console.log(req.body)
     Contact.create(req.body,function(err, contact) {
       if (err){
         res.send(err);

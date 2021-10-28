@@ -8,6 +8,17 @@ var Contact=function(contact){
 };
 
 //Insert row
+// Contact.create= function(newContact,result){
+//     dbConn.query("INSERT INTO contacts set username=?,email=?,subject=?,message=?",[newContact.username,newContact.email,newContact.subject,newContact.message], function(err,res){
+//         if(err){
+//             console.log("error at inserting :",err)
+//             result(err,null);
+//         }else{
+//             console.log(res.insertId);
+//             result(newContact);
+//         }
+//     });
+// };
 
 Contact.create= function(newContact,result){
     dbConn.query("INSERT INTO contacts set ?", newContact , function(err,res){

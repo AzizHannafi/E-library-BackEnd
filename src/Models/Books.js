@@ -5,6 +5,7 @@ var dbConn=require('../../Config/db.config');
      this.title=book.title;
      this.description= book.description;
      this.author=book.author;
+     this.price= book.price;
      this.image=book.image;
  };
 
@@ -49,7 +50,7 @@ Book.findById = function (id, result) {
 
 
 Book.update = function(id, book, result){
-    dbConn.query("UPDATE books SET title=?,description=?,author=?,image=? WHERE id = ?", [book.title,book.description,book.author,book.image, id], 
+    dbConn.query("UPDATE books SET title=?,description=?,author=?,price=?,image=? WHERE id = ?", [book.title,book.description,book.author,book.price,book.image, id], 
         function (err, res) {
             if(err) {
                 console.log("error: ", err);
